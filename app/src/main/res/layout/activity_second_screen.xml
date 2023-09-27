@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/personajeImageView"
+        android:layout_width="250dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
+        android:padding="8dp"
+        android:background="@android:color/darker_gray"
+       />
+
+
+    <EditText
+        android:id="@+id/nombrePersonajeEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/personajeImageView"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/my_background"
+        android:drawableStart="@drawable/ic_personaje"
+        android:hint="Character's name"
+        android:padding="12dp"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/verificarButton"
+        android:layout_width="189dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nombrePersonajeEditText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="100dp"
+        android:background="@drawable/rounded_button"
+        android:fontFamily="@font/poppins"
+        android:text="Verify"
+        android:textColor="#fff"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
