@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button2)
 
         button.setOnClickListener {
-            val intent = Intent(this, secondScreen::class.java)
+            val intent = Intent(this, verifyScreen::class.java)
             startActivity(intent)
         }
     }

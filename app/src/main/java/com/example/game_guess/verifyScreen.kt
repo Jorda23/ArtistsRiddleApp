@@ -6,18 +6,17 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class secondScreen : AppCompatActivity() {
+class verifyScreen : AppCompatActivity() {
 
     private var attemptsRemaining = 5
     private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_second_screen)
+        setContentView(R.layout.activity_verify_screen)
 
 
         val imagesArtist = mapOf(
@@ -28,24 +27,24 @@ class secondScreen : AppCompatActivity() {
         )
 
         val characterImageView: ImageView = findViewById(R.id.personajeImageView)
-        val nombrePersonajeEditText: EditText = findViewById(R.id.nombrePersonajeEditText)
+        val nameCharacterEditText: EditText = findViewById(R.id.nombrePersonajeEditText)
         val verifyButton: Button = findViewById(R.id.verificarButton)
 
-        val (idImagenAleatoria, nombrePersonaje) = imagesArtist.entries.random()
-        characterImageView.setImageResource(idImagenAleatoria)
+        val (randomImageID, charactername) = imagesArtist.entries.random()
+        characterImageView.setImageResource(randomImageID)
 
         verifyButton.setOnClickListener {
-            val respuestaUsuario = nombrePersonajeEditText.text.toString().trim()
-            nombrePersonajeEditText.text.clear()
+            val responseUser = nameCharacterEditText.text.toString().trim()
+            nameCharacterEditText.text.clear()
 
-            if (respuestaUsuario.equals(nombrePersonaje, ignoreCase = true)) {
-                val intent = Intent(this, SuccessActivity::class.java)
+            if (responseUser.equals(charactername, ignoreCase = true)) {
+                val intent = Intent(this, successScreenActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
                 attemptsRemaining--
                 if (attemptsRemaining <= 0) {
-                    val intent = Intent(this, ErrorMessageActivity::class.java)
+                    val intent = Intent(this, errorScreenActivity::class.java)
                     startActivity(intent)
                     finish()
                 } else {
@@ -53,12 +52,6 @@ class secondScreen : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        mediaPlayer = MediaPlayer.create(this, R.raw.angels)
-        mediaPlayer.start()
     }
 
     override fun onPause() {

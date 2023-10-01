@@ -13,13 +13,13 @@
         android:theme="@style/Theme.Gameguess"
         tools:targetApi="31" >
         <activity
-            android:name=".ErrorMessageActivity"
+            android:name=".errorScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".SuccessActivity"
+            android:name=".successScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".secondScreen"
+            android:name=".verifyScreen"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

@@ -6,20 +6,20 @@ import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
-class ErrorMessageActivity : AppCompatActivity() {
+class errorScreenActivity : AppCompatActivity() {
 
     private lateinit var mediaPlayer: MediaPlayer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_error_message)
+        setContentView(R.layout.activity_error_screen)
 
-        val regresarSecondScreenButton: Button = findViewById(R.id.regresarFirstScreenButton)
+        val returnVerifyScreen: Button = findViewById(R.id.regresarFirstScreenButton)
 
         mediaPlayer = MediaPlayer.create(this, R.raw.error)
         mediaPlayer.start()
 
-        regresarSecondScreenButton.setOnClickListener {
+        returnVerifyScreen.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
